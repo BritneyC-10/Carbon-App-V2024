@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section class="section_header_carbon_calc">
+        <div class="container">
+    
+        <div class="header_carbon_calc">
+            <div class="box"> 
+                <h1 class="page-title">Carbon Calculator</h1>
+            <p style="text-align:left;">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum. Totam excepturi labore voluptatibus iusto sapiente quisquam consectetur optio magnam voluptates omnis vel officia alias distinctio quas laborum reiciendis ratione inventore veniam, cupiditate doloribus dolore, eius natus a. Magni inventore consequuntur voluptas reprehenderit perferendis! Molestias aspernatur rem autem aut temporibus.
+            </p>
+            <div class="container_buttons">
+                <div class="btn">
+                    <a href="{{url_for('methodology.methodology_home')}}" class="btn_header">Methodology</a>
+                </div>
+                <div class="btn">
+                    <a href="#" class="btn_header", data-toggle="modal" data-target="#carbon_calc_instructions">Instructions</a>
+                </div>
+                <div class="btn">
+                    <a href="#" class="btn_header">Your emissions</a>
+                </div>
+            </div>  
+            <!-- Modal Instructions -->
+            <div class="modal fade" id="carbon_calc_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+          
+                    <div class="modal-header">
+                    <h5 class="modal-title", style="color:black; text-align: center;">Carbon App, instructions</h5>
+                    </div>
+          
+                    <div class="modal-body", style="color:black">
+                    <p style="text-align: left;">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae ratione tempore id esse nobis molestias quasi explicabo possimus ea reprehenderit.
+                    </p>
+                    <ol style="text-align:left;">
+                        <li>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
+                        </li>
+                    </ol>
+                    </div>
+          
+                    <div class="modal-footer">
+                    <button class="btn btn-secondary btn-lg mr-2", style="background-color:#695747;" data-dismiss="modal">Close</button>
+                    </div>
+          
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="header-wave">
+            <svg class="header-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+              <path class="header-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+            </svg>
+          </div>
+    </section>
+    <section class="section_padding">
+        <h1 class="main-intro-text">Please select a mode of transportation:</h1>
+
+        <div class="calc-cardview-container">
+            <div class="cardview-layout">
+                <i class="close-button fa-solid fa-circle-xmark fa-2xl" id="close-button"></i>
+               <form class="fill-forms">
+                   <div class="fill-form">
+                       <h3>Transportation Mode</h3>
+                       <div class="input-bar" id="transportation-input"></div>
+                   </div>
+                   <div class="fill-form">
+                       <h3>Kilometers</h3>
+                       <input class="input-bar" type="number" id="kilometers-input">
+                   </div>
+                   <div class="fill-form" id="fuel-form">
+                       <h3>Fuel Type</h3>
+                       <input class="input-bar" id="fuel-input">
+                   </div>
+                   <div class="action-button" type="submit">
+                    <h3>Calculate</h3>
+                    </div>
+               </form>
+           </div>  
+        </div>
+
+        <div class="transport-selection-container">
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="/static/icons/transport-icons/car.avif">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Car</h3>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="https://i.postimg.cc/XYRKq6yw/bus.jpg">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Bus</h3>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="https://i.postimg.cc/zfNyRttb/airplane-background.jpg">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Airplane</h3>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="https://i.postimg.cc/pT22JyFR/train.jpg">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Train</h3>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="https://i.postimg.cc/ZRTwYz1w/ferry.webp">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Ferry</h3>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="https://i.postimg.cc/SR4Ybm3K/walk.jpg">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Walking</h3>
+                </div>
+            </div>
+            <div class="transport-item">
+                <div class="transport-img-container">
+                    <img src="https://i.postimg.cc/P5pzd5NX/bike.jpg">
+                </div>
+                <div class="transport-item-title">
+                    <h3>Bike</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- This is JS code that should run on a seperate .js file but
+    but server side won't allow that-->
+   
+    <script>
+
+        const sectionTitle = document.querySelector(".main-intro-text")
+
+        const transportElementsContainer = document.querySelector(".transport-selection-container")
+        const transportCardviews = document.querySelectorAll(".transport-item")
+
+        // Calculation Cardview elements
+        const calcCardiew = document.querySelector(".calc-cardview-container")
+        const closeButton = document.getElementById("close-button")
+        const transportFormInput = document.getElementById("transportation-input")
+        const kilometersFormInput = document.getElementById("kilometers-input")
+        const fuelFormElement = document.getElementById("fuel-form")
+        const fuelFormInput = document.getElementById("fuel-input")
+
+        transportCardviews.forEach(item => {
+            item.addEventListener("click", function() {
+                hideItems();
+                displayCalcCardview(item);
+            })
+        })
+
+        closeButton.addEventListener("click", function(){
+            showItems();
+            hideCalcCardview();
+        })
+
+        function hideItems(){
+            transportElementsContainer.style.display = "none";
+        }
+
+        function showItems(){
+             transportElementsContainer.style.display = "flex";
+        }
+
+        function displayCalcCardview(item) {
+            const selectedTransport = item.querySelector("h3").textContent
+            transportFormInput.textContent = selectedTransport;
+            if (selectedTransport === "Walking" || selectedTransport === "Bike"){
+                fuelFormElement.style.display = "none";
+            }else{
+                fuelFormElement.style.display = "block"
+            }
+            sectionTitle.innerHTML = "Lets Calculate!";
+            calcCardiew.style.display = "flex";
+        }
+
+        function hideCalcCardview(){
+            sectionTitle.innerHTML = "Please select a mode of transportation";
+            calcCardiew.style.display = "none";
+            resetInputFields();
+        }
+
+        function resetInputFields(){
+            kilometersFormInput.value = ""
+            fuelFormInput.value = ""
+        }
+   
+    </script>
+       
+
+{% endblock content %}
